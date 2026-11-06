@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - Manipulação do DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="col">
+            <!-- Exercicio 1 -->
+            <div class="container ex1">
+                <strong><label>Digite seu Nome:</label></strong>
+                <input id="campo-nome" type="text" placeholder="Ex: Danilo" required>
+                <button id="btn-nome">Enviar</button>
+                <p id="nome"></p>
+            </div>
+
+            <!-- Exercicio 2 -->
+            <div class="container ex2">
+                <div class="input-row">
+                    <strong><label>Contador de Caracteres:</label></strong>
+                    <input id="campo-caracteres" type="text">
+                </div>
+                <label id="contador"></label>
+            </div>
+
+            <!-- Exercicio 3 -->
+            <div class="container ex3">
+                <button id="tema">Alternar Tema</button>
+            </div>
+        </div>
+        <div class="col">
+            <!-- Exercicio 4 -->
+            <div class="container ex4">
+                <div class="card">
+                    <img src="https://cdn.pfps.gg/pfps/8517-steve-minecraft.png"
+                        alt="Personagem Steve de Minecraft correndo enquanto segura uma picareta">
+                    <p id="card-nome">Nome do Usuário</p>
+                    <p id="card-descricao">Descrição</p>
+                </div>
+
+                <form id="formulario">
+                    <p>Digite seu nome:</p>
+                    <input type="text" id="nome-formulario">
+
+                    <p>Digite sua descrição:</p>
+                    <textarea id="descricao-formulario"></textarea>
+
+                    <button type="submit" id="atualizar-formulario">Atualizar Perfil</button>
+                </form>
+            </div>
+
+            <!-- Exercicio 5 -->
+            <div class="container ex5">
+                <img src="" alt="" id="img">
+                <p id="descricao-img"></p>
+                <div class="buttons">
+                    <button id="btnA">Mostrar imagem A</button>
+                    <button id="btnB">Mostrar imagem B</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        //Exercicio 1
+        const btnNome = document.getElementById("btn-nome");
+        const campoNome = document.getElementById("campo-nome");
+        const nomeUsuario = document.getElementById("nome");
+
+
+        btnNome.addEventListener("click", () => {
+            if (campoNome.value === "") {
+                nomeUsuario.textContent = "Digite seu Nome.";
+            } else {
+                nomeUsuario.textContent = `Olá, ${campoNome.value}!`;
+            }
+
+        });
+
+
+        //Exercicio 2
+        const caracteres = document.getElementById("campo-caracteres");
+        let contador = document.getElementById("contador");
+
+        caracteres.addEventListener("input", () => {
+            contador.textContent = `Você digitou ${caracteres.value.length} caracteres`;
+            if(caracteres.value.length > 50){
+                contador.textContent += ` - Aviso: Ultrapassou 50 caracteres`;
+            }
+        });
+
+
+        //Exercicio 3
+        const tema = document.getElementById("tema");
+        const btnAtualizar = document.getElementById("atualizar-formulario");
+
+        tema.addEventListener("click", () => {
+            tema.classList.toggle("escuro-btn");
+            if(tema.classList.contains("escuro-btn")){
+                tema.textContent = "Tema Claro";
+            }else{
+                tema.textContent = "Tema Escuro"
+            }
+
+            btnNome.classList.toggle("escuro-btn");
+            btnAtualizar.classList.toggle("escuro-btn");
+            btnA.classList.toggle("escuro-btn");
+            btnB.classList.toggle("escuro-btn");
+            document.body.classList.toggle("escuro-body");
+        });
+
+
+        //Exercicio 4
+        const formulario = document.getElementById("formulario");
+        const nomeForm = document.getElementById("nome-formulario");
+        const descricaoForm = document.getElementById("descricao-formulario");
+        const cardNome = document.getElementById("card-nome");
+        const cardDescricao = document.getElementById("card-descricao");
+
+        formulario.addEventListener("submit", (evento) => {
+            evento.preventDefault();
+
+            cardNome.textContent = nomeForm.value;
+            cardDescricao.textContent = descricaoForm.value;
+        });
+
+
+        //Exercicio 5
+        const btnA = document.getElementById("btnA");
+        const btnB = document.getElementById("btnB");
+        const img = document.getElementById("img");
+        const descricaoImg = document.getElementById("descricao-img")
+
+
+        btnA.addEventListener("click", () => {
+            img.src = "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4d39b0119681877.60a2ecc2cd948.jpg";
+            img.alt = "Anakin Skywalker, personagem de Star Wars, olhando para a esquerda";
+            descricaoImg.textContent = img.getAttribute("alt");
+        });
+
+        btnB.addEventListener("click", () => {
+            img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8qYFs1ZaHzSQ0Q-MHb2ef4tOzD-i2ovoP9OjKr1w48lEYE_LQVfYSPThf&s=10";
+            img.alt = "Darth Vader, personagem de Star Wars, olhando para a direita";
+            descricaoImg.textContent = img.getAttribute("alt");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .escuro-btn {
+            background-color: rgb(41, 41, 41);
+            border: solid 2px gray;
+            color: white;
+        }
+
+        .escuro-body {
+            background-color: #272727;
+            color: white;
+        }
+
+        .escuro-body .container {
+            background-color: #494949;
+            box-shadow: 1px 1px 10px white;
+        }
+
+        body {
+            background-color: rgb(235, 242, 248);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 10px gray;
+            background-color: white;
+            margin: 20px;
+            width: 100%;
+        }
+
+        .ex3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ex3 button {
+            padding: 15px 30px;
+        }
+
+        .input-row {
+            margin-bottom: 15px;
+        }
+
+        input {
+            font-size: 15px;
+            padding: 5px 10px;
+        }
+
+        button {
+            padding: 8px 20px;
+            border: solid 2px #7e7e7e;
+            border-radius: 5px;
+            background-color: rgb(236, 236, 236);
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .ex4 {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .card,
+        #formulario {
+            border: 3px solid #ccc;
+            padding: 20px;
+            width: 250px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .ex4 img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+        }
+
+        .ex4 #card-nome {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .ex4 input,
+        .ex4 textarea {
+            width: 100%;
+            resize: vertical;
+            padding: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .ex5 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ex5 img {
+            width: 200px;
+            height: 300px;
+            object-fit: cover;
+        }
